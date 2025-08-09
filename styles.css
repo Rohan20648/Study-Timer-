@@ -1,0 +1,119 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #e6d3c1; /* light beige-brown */
+  margin: 0;
+  padding: 20px;
+}
+
+
+#pendulumContainer {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+}
+
+#clockBackground {
+  width: 100%;
+}
+
+#pendulum {
+  position: absolute;
+  top: 155px; /* Adjust based on clock image */
+  left: 50%;
+  transform: translateX(-50%) rotate(0deg);
+  transform-origin: top center;
+  transition: transform 0.3s ease;
+  width: 150px; /* Adjust size as needed */
+}
+
+.swinging {
+  animation: swing 1s infinite ease-in-out;
+}
+
+@keyframes swing {
+  0% { transform: translateX(-50%) rotate(-15deg); }
+  50% { transform: translateX(-50%) rotate(15deg); }
+  100% { transform: translateX(-50%) rotate(-15deg); }
+}
+
+#timer {
+  margin-top: 40px;
+}
+
+#timeDisplay {
+  font-size: 48px;
+  margin: 20px 0;
+}
+
+#controls button {
+  font-size: 16px;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+/* Base brown primary button */
+#controls .btn-primary,
+#controls button {
+  appearance: none;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 22px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: #fff; /* white text */
+  background: linear-gradient(180deg, #8B5E3C 0%, #6F4A2D 100%); /* warm brown gradient */
+  box-shadow: 0 6px 16px rgba(111, 74, 45, 0.28), 0 2px 6px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.2s ease, background 0.2s ease, opacity 0.2s ease, filter 0.2s ease;
+}
+
+/* Hover */
+#controls .btn-primary:hover,
+#controls button:hover {
+  box-shadow: 0 10px 24px rgba(111, 74, 45, 0.35), 0 4px 10px rgba(0,0,0,0.10);
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+}
+
+/* Active (pressed) */
+#controls .btn-primary:active,
+#controls button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(111, 74, 45, 0.25), 0 2px 6px rgba(0,0,0,0.08);
+  filter: brightness(0.96);
+}
+
+/* Focus visible (keyboard) */
+#controls .btn-primary:focus-visible,
+#controls button:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px #fff,
+    0 0 0 6px rgba(139, 94, 60, 0.6),
+    0 8px 20px rgba(111, 74, 45, 0.28);
+}
+
+/* Optional variants in brown palette */
+#controls .btn-secondary {
+  color: #fff;
+  background: linear-gradient(180deg, #A47148 0%, #875A3B 100%);
+  box-shadow: 0 6px 16px rgba(135, 90, 59, 0.28), 0 2px 6px rgba(0,0,0,0.08);
+}
+#controls .btn-danger {
+  color: #fff;
+  background: linear-gradient(180deg, #7A4B3A 0%, #5E382B 100%); /* deeper, more red-brown */
+  box-shadow: 0 6px 16px rgba(94, 56, 43, 0.28), 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* Disabled */
+#controls button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+
+
